@@ -327,9 +327,9 @@ void EosUdpInThread::OSCParserClient_Log(const std::string &message)
 
 EosTcpClientThread::EosTcpClientThread()
 	: m_Port(0)
-	, m_LogMsgType(EosLog::LOG_MSG_TYPE_INFO)
 	, m_Run(false)
 	, m_Mutex(QMutex::Recursive)
+	, m_LogMsgType(EosLog::LOG_MSG_TYPE_INFO)
 {
 }
 
