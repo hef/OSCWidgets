@@ -17,6 +17,7 @@ matrix:
 before_install:
   - eval "${MATRIX_BEFORE_INSTALL}"
 script:
+ - mkdir -p build &&  cd build
  - eval "${MATRIX_QMAKE}"
  - make
 
