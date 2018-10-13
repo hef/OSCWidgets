@@ -11,4 +11,7 @@
 *.idb
 *.db
 *.opendb
+*.o
 moc*.cpp
+.qmake.stash
+Makefile
