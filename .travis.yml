@@ -8,6 +8,7 @@ matrix:
         - MATRIX_QMAKE="/usr/local/opt/qt/bin/qmake"
     - os: linux
       env:
+        - MATRIX_BEFORE_INSTALL="apt install -y qt5-default"
         - MATRIX_QMAKE="qmake"
 
 before_install:
