@@ -4,11 +4,15 @@ matrix:
     - os: osx
       osx_image: xcode10
       env:
-        - MATRIX_EVAL="brew install qt5"
+        - MATRIX_BEFORE_INSTALL="brew install qt5"
+        - MATRIX_QMAKE="/usr/local/opt/qt/bin/qmake"
+    - os: linux
+      env:
+        - MATRIX_QMAKE="qmake"
 
 before_install:
-  - eval "${MATRIX_EVAL}"
+  - eval "${MATRIX_BEFORE_INSTALL}"
 script:
- - /usr/local/opt/qt/bin/qmake
+ - eval "${MATRIX_QMAKE}"
  - make
 
