@@ -1,4 +1,4 @@
-*.pro.user
+**.pro.user
 *.suo
 *.obj
 *.ilk
@@ -15,3 +15,7 @@
 moc*.cpp
 .qmake.stash
 Makefile
+Makefile.*
+release/
+*.swp
+*~

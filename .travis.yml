@@ -6,6 +6,7 @@ matrix:
       env:
         - MATRIX_BEFORE_INSTALL="brew install qt5"
         - MATRIX_QMAKE="/usr/local/opt/qt/bin/qmake"
+        - MATRIX_MAKE="make"
     - os: linux
       addons:
         apt:
@@ -13,11 +14,17 @@ matrix:
             - qt5-default
       env:
         - MATRIX_QMAKE="qmake"
+        - MATRIX_MAKE="make"
+    - os: windows
+      env:
+        - MATRIX_QMAKE="qmake"
+        - MATRIX_MAKE="nmake"
+
 
 before_install:
   - eval "${MATRIX_BEFORE_INSTALL}"
 script:
  - mkdir -p build &&  cd build
  - eval "${MATRIX_QMAKE} .."
- - make
+ - eval "${MATRIX_MAKE}"
 
