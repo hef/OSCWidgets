@@ -9,6 +9,6 @@ matrix:
 before_install:
   - eval "${MATRIX_EVAL}"
 script:
- - qmake
+ - /usr/local/opt/qt/bin/qmake
  - make
 
